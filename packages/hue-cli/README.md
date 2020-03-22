@@ -1,5 +1,4 @@
-cli
-===
+# cli
 
 A Command Line Interface to control Philips Hue lightning system.
 
@@ -10,55 +9,62 @@ A Command Line Interface to control Philips Hue lightning system.
 [![License](https://img.shields.io/npm/l/cli.svg)](https://github.com/creal73/cli/blob/master/package.json)
 
 <!-- toc -->
-* [Usage](#usage)
-* [Commands](#commands)
+
+- [Usage](#usage)
+- [Commands](#commands)
 <!-- tocstop -->
+
 # Usage
+
 <!-- usage -->
+
 ```sh-session
-$ npm install -g cli
-$ cli COMMAND
+$ npm install -g hue-cli
+$ hue COMMAND
 running command...
-$ cli (-v|--version|version)
-cli/0.0.0 linux-x64 node-v10.17.0
-$ cli --help [COMMAND]
+$ hue (-v|--version|version)
+hue-cli/0.0.0 linux-x64 node-v13.11.0
+$ hue --help [COMMAND]
 USAGE
-  $ cli COMMAND
+  $ hue COMMAND
 ...
 ```
+
 <!-- usagestop -->
+
 # Commands
+
 <!-- commands -->
-* [`cli hello [FILE]`](#cli-hello-file)
-* [`cli help [COMMAND]`](#cli-help-command)
 
-## `cli hello [FILE]`
+- [`hue config [RESET]`](#hue-config-reset)
+- [`hue help [COMMAND]`](#hue-help-command)
+- [`hue lights`](#hue-lights)
+- [`hue off [FILE]`](#hue-off-file)
+- [`hue on [DEVICEID]`](#hue-on-deviceid)
 
-describe the command here
+## `hue config [RESET]`
+
+set up the configuration needed to access Hue API
 
 ```
 USAGE
-  $ cli hello [FILE]
+  $ hue config [RESET]
 
 OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ cli hello
-  hello world from ./src/hello.ts!
+  -b, --bridge=bridge  address of the Hue Bridge
+  -h, --help           show CLI help
+  -t, --token=token    Hue API token
 ```
 
-_See code: [src/commands/hello.ts](https://github.com/creal73/cli/blob/v0.0.0/src/commands/hello.ts)_
+_See code: [src/commands/config.ts](https://github.com/creal73/hue-cli/blob/v0.0.0/src/commands/config.ts)_
 
-## `cli help [COMMAND]`
+## `hue help [COMMAND]`
 
-display help for cli
+display help for hue
 
 ```
 USAGE
-  $ cli help [COMMAND]
+  $ hue help [COMMAND]
 
 ARGUMENTS
   COMMAND  command to show help for
@@ -68,4 +74,49 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `hue lights`
+
+list all available lights
+
+```
+USAGE
+  $ hue lights
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/lights.ts](https://github.com/creal73/hue-cli/blob/v0.0.0/src/commands/lights.ts)_
+
+## `hue off [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ hue off [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/off.ts](https://github.com/creal73/hue-cli/blob/v0.0.0/src/commands/off.ts)_
+
+## `hue on [DEVICEID]`
+
+describe the command here
+
+```
+USAGE
+  $ hue on [DEVICEID]
+
+OPTIONS
+  -h, --help  show CLI help
+```
+
+_See code: [src/commands/on.ts](https://github.com/creal73/hue-cli/blob/v0.0.0/src/commands/on.ts)_
+
 <!-- commandsstop -->

@@ -1,6 +1,10 @@
 {
   "extends": [
     "oclif",
-    "oclif-typescript"
-  ]
+    "oclif-typescript",
+    "prettier"
+  ],
+  "rules": {
+    "no-console": "off"
+  }
 }
